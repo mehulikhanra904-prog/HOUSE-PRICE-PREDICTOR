@@ -51,7 +51,7 @@ function App() {
       });
 
       const response = await fetch(
-        `${(import.meta.env.VITE_API_URL || "http://127.0.0.1:8000").replace(/\/$/, "")}/predict?${params.toString()}`,
+        `https://house-price-predictor-4-3oap.onrender.com/predict?${params.toString()}`,
         {
           method: "POST",
         }
@@ -74,7 +74,6 @@ function App() {
   return (
     <div className="app">
       <div className="container">
-
         <div className="header">
           <h1>🏠 Indian House Price Predictor</h1>
           <p>
@@ -83,14 +82,10 @@ function App() {
         </div>
 
         <div className="card">
-
           <form onSubmit={handleSubmit}>
-
             <div className="grid">
-
               <div className="input-group">
                 <label>Area (sq ft)</label>
-
                 <input
                   type="number"
                   name="area_sqft"
@@ -102,10 +97,8 @@ function App() {
                 />
               </div>
 
-
               <div className="input-group">
                 <label>Bedrooms</label>
-
                 <input
                   type="number"
                   name="bedrooms"
@@ -117,10 +110,8 @@ function App() {
                 />
               </div>
 
-
               <div className="input-group">
                 <label>Bathrooms</label>
-
                 <input
                   type="number"
                   name="bathrooms"
@@ -132,10 +123,8 @@ function App() {
                 />
               </div>
 
-
               <div className="input-group">
                 <label>Property Age (years)</label>
-
                 <input
                   type="number"
                   name="age"
@@ -147,10 +136,8 @@ function App() {
                 />
               </div>
 
-
               <div className="input-group full-width">
                 <label>City</label>
-
                 <select
                   name="location"
                   value={formData.location}
@@ -163,44 +150,23 @@ function App() {
                   ))}
                 </select>
               </div>
-
             </div>
 
-
             <button type="submit" disabled={loading}>
-              {loading
-                ? "Predicting..."
-                : "Predict House Price"}
+              {loading ? "Predicting..." : "Predict House Price"}
             </button>
-
           </form>
-
 
           {prediction !== null && (
             <div className="result">
-
               <p>Estimated House Price</p>
-
-              <h2>
-                ₹{prediction.toLocaleString("en-IN")}
-              </h2>
-
-              <span>
-                {formData.location}
-              </span>
-
+              <h2>₹{prediction.toLocaleString("en-IN")}</h2>
+              <span>{formData.location}</span>
             </div>
           )}
 
-
-          {error && (
-            <div className="error">
-              {error}
-            </div>
-          )}
-
+          {error && <div className="error">{error}</div>}
         </div>
-
       </div>
     </div>
   );
