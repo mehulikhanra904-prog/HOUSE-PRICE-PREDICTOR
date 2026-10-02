@@ -51,7 +51,7 @@ function App() {
       });
 
       const response = await fetch(
-        `http://127.0.0.1:8000/predict?${params.toString()}`,
+        `${(import.meta.env.VITE_API_URL || "http://127.0.0.1:8000").replace(/\/$/, "")}/predict?${params.toString()}`,
         {
           method: "POST",
         }
