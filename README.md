@@ -12,18 +12,6 @@
   <a href="https://github.com/mehulikhanra904-prog/HOUSE-PRICE-PREDICTOR"><strong>💻 GitHub Repository</strong></a>
 </p>
 
----
-
-## 🌐 Live Application
-
-### 👉 [Open House Price Predictor](https://house-price-predictor-4fsg.vercel.app/)
-
-The frontend is deployed on **Vercel** and communicates with a **FastAPI + Machine Learning backend**.
-
-> **Note:** Predictions are model estimates, not professional property valuations. Actual market prices can vary because of factors not represented in the training data.
-
----
-
 ## 📌 Project Overview
 
 **House Price Predictor** is a full-stack Machine Learning project that predicts the estimated price of an Indian residential property from practical property attributes.
@@ -824,10 +812,6 @@ If this project is intended for open-source distribution, adding an explicit lic
 **Mehuli Khanra**
 
 B.Tech CSE Student • Aspiring AI Engineer • Full-Stack Developer
-
-GitHub: [@mehulikhanra904-prog](https://github.com/mehulikhanra904-prog)
-
----
 
 # ⭐ Support the Project
 
