@@ -12,13 +12,17 @@ app = FastAPI(
     version="3.0.0"
 )
 
+# Frontend origins allowed to call this API.
+ALLOWED_ORIGINS = [
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+    "https://frontend-zeta-swart-28.vercel.app",
+    "https://house-price-predictor-jet.vercel.app",
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:5173",
-        "http://127.0.0.1:5173",
-        "https://frontend-zeta-swart-28.vercel.app"
-    ],
+    allow_origins=ALLOWED_ORIGINS,
     allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
